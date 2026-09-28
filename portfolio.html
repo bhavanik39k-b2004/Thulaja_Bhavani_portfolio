@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuruva Thulaja Bhavani | Data Science & Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Kuruva Thulaja Bhavani - Final-Year B.Tech Data Science & Engineering student.">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(10, 13, 20, 0.5); }
+    ::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.3); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.6); }
+
+    .glass-panel {
+      background: rgba(17, 23, 38, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .light .glass-panel {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+    }
+    .glass-panel-interactive {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-panel-interactive:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.15);
+    }
+    .text-gradient-primary {
+      background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-[#0A0D14] light:bg-[#F8FAFC] text-slate-100 light:text-slate-900 antialiased selection:bg-indigo-500/30 selection:text-indigo-200 transition-colors duration-300 min-h-screen flex flex-col lg:flex-row">
+
+  <!-- ==================== DESKTOP SIDEBAR ==================== -->
+  <aside class="hidden lg:flex flex-col w-72 xl:w-80 h-screen sticky top-0 bg-[#0A0D14]/90 light:bg-white/90 backdrop-blur-xl border-r border-slate-800/80 light:border-slate-200 z-40 p-6 overflow-y-auto">
+    <!-- Profile Card Header -->
+    <div class="flex flex-col items-center text-center pb-6 border-b border-slate-800/60 light:border-slate-200">
+      <div class="relative group cursor-pointer" onclick="scrollToId('about')">
+        <div class="w-24 h-24 rounded-2xl overflow-hidden ring-2 ring-indigo-500/40 light:ring-indigo-600/40 shadow-xl group-hover:ring-indigo-400 transition-all duration-300 transform group-hover:scale-105">
+          <img src="IMG-20260927-WA0004.jpg" onerror="this.src='public/assets/profile.jpg'" alt="Kuruva Thulaja Bhavani" class="w-full h-full object-cover object-top">
+        </div>
+        <div class="absolute -bottom-1 -right-1 bg-emerald-500 text-slate-900 p-1 rounded-full ring-4 ring-[#0A0D14] light:ring-white" title="Actively Seeking Opportunities">
+          <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping absolute inset-1"></div>
+          <div class="w-3 h-3 rounded-full bg-emerald-300 relative"></div>
+        </div>
+      </div>
+
+      <h1 class="mt-4 font-bold text-lg text-slate-100 light:text-slate-900 tracking-tight leading-snug">
+        Kuruva Thulaja Bhavani
+      </h1>
+      <p class="text-xs font-medium text-indigo-400 light:text-indigo-600 mt-1">
+        Data Science & Engineering Student
+      </p>
+
+      <div class="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-indigo-500/10 text-indigo-300 light:bg-indigo-50 light:text-indigo-700 border border-indigo-500/20">
+        <i data-lucide="sparkles" class="w-3 h-3 text-indigo-400"></i>
+        <span>Final-Year B.Tech</span>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="flex-1 py-6 space-y-1">
+      <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 light:text-slate-400 px-3 mb-2">
+        Navigation
+      </div>
+      <a href="#home" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="home" class="w-4 h-4"></i>
+        <span>Home</span>
+      </a>
+      <a href="#about" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="user" class="w-4 h-4"></i>
+        <span>About</span>
+      </a>
+      <a href="#education" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+        <span>Education</span>
+      </a>
+      <a href="#skills" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="cpu" class="w-4 h-4"></i>
+        <span>Skills</span>
+      </a>
+      <a href="#projects" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+        <span>Projects</span>
+      </a>
+      <a href="#certifications" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="file-badge" class="w-4 h-4"></i>
+        <span>Certifications</span>
+      </a>
+      <a href="#contact" class="nav-link flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800/50 light:hover:bg-slate-100 transition-all">
+        <i data-lucide="mail" class="w-4 h-4"></i>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <!-- Quick Contact Micro-card & Theme Toggle -->
+    <div class="pt-4 border-t border-slate-800/60 light:border-slate-200 space-y-3">
+      <div class="bg-slate-900/50 light:bg-slate-50 rounded-xl p-3 border border-slate-800/80 light:border-slate-200 text-xs space-y-2">
+        <div class="flex items-center justify-between text-slate-400 light:text-slate-500">
+          <span class="flex items-center gap-1.5 truncate">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400 shrink-0"></i>
+            <span class="truncate">bhavani.k39k@gmail.com</span>
+          </span>
+          <button onclick="copyText('bhavani.k39k@gmail.com', 'Email')" class="p-1 hover:text-white" title="Copy Email">
+            <i data-lucide="copy" class="w-3 h-3"></i>
+          </button>
+        </div>
+        <div class="flex items-center justify-between text-slate-400 light:text-slate-500">
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+            <span>+91 8331005306</span>
+          </span>
+          <button onclick="copyText('+91 8331005306', 'Phone')" class="p-1 hover:text-white" title="Copy Phone">
+            <i data-lucide="copy" class="w-3 h-3"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="openResumeModal()" class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 light:text-indigo-700 light:bg-indigo-50 border border-indigo-500/30 transition-all hover:scale-[1.02]">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>Resume</span>
+        </button>
+        <button onclick="toggleTheme()" class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium bg-slate-800/60 light:bg-slate-100 hover:bg-slate-700 text-slate-300 light:text-slate-700 border border-slate-700/50 light:border-slate-200 transition-all">
+          <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400 dark:inline light:hidden"></i>
+          <span id="theme-btn-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MOBILE HEADER ==================== -->
+  <header class="lg:hidden sticky top-0 z-50 bg-[#0A0D14]/95 light:bg-white/95 backdrop-blur-md border-b border-slate-800/80 light:border-slate-200 px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3" onclick="scrollToId('home')">
+      <div class="w-10 h-10 rounded-xl overflow-hidden ring-2 ring-indigo-500/30">
+        <img src="IMG-20260927-WA0004.jpg" onerror="this.src='public/assets/profile.jpg'" alt="Bhavani" class="w-full h-full object-cover object-top">
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-slate-100 light:text-slate-900 leading-none">Thulaja Bhavani</h1>
+        <p class="text-[11px] text-indigo-400 light:text-indigo-600 mt-0.5">Data Science & Eng.</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button onclick="toggleTheme()" class="p-2 rounded-xl bg-slate-800/60 light:bg-slate-100 text-slate-300 light:text-slate-700">
+        <i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+      </button>
+      <button onclick="toggleMobileMenu()" class="p-2 rounded-xl bg-slate-800/60 light:bg-slate-100 text-slate-200 light:text-slate-800">
+        <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu" class="hidden fixed inset-x-0 top-[60px] bg-[#0A0D14]/98 light:bg-white/98 backdrop-blur-2xl border-b border-slate-800 light:border-slate-200 p-5 shadow-2xl z-40">
+    <div class="grid grid-cols-2 gap-2 mb-4">
+      <a href="#home" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="home" class="w-4 h-4"></i> Home
+      </a>
+      <a href="#about" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="user" class="w-4 h-4"></i> About
+      </a>
+      <a href="#education" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Education
+      </a>
+      <a href="#skills" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="cpu" class="w-4 h-4"></i> Skills
+      </a>
+      <a href="#projects" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="folder-git-2" class="w-4 h-4"></i> Projects
+      </a>
+      <a href="#certifications" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="file-badge" class="w-4 h-4"></i> Certifications
+      </a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-semibold bg-slate-900/60 light:bg-slate-100 text-slate-300">
+        <i data-lucide="mail" class="w-4 h-4"></i> Contact
+      </a>
+    </div>
+    <button onclick="toggleMobileMenu(); openResumeModal()" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-semibold">
+      <i data-lucide="download" class="w-4 h-4"></i>
+      <span>View & Download Resume</span>
+    </button>
+  </div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-8 xl:px-12 py-4 sm:py-8 overflow-x-hidden">
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-6 pb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div class="lg:col-span-8 flex flex-col justify-between glass-panel rounded-3xl p-6 sm:p-8 xl:p-10 relative">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-4">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 light:bg-indigo-50 light:text-indigo-700 border border-indigo-500/25">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i>
+                <span>Available for Technical Roles & Internships</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-800/60 light:bg-slate-100 text-slate-300 light:text-slate-700 border border-slate-700/50">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+                <span>Andhra Pradesh, India</span>
+              </span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-slate-100 light:text-slate-900 leading-tight">
+              Hi, I'm <span class="text-gradient-primary">Thulaja Bhavani</span>
+            </h1>
+            <p class="text-lg sm:text-xl font-semibold text-slate-300 light:text-slate-700 mt-2">
+              Final-Year B.Tech Data Science & Engineering Student
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-slate-400 light:text-slate-600 leading-relaxed max-w-2xl">
+              A motivated and detail-oriented final-year Data Science student with foundational knowledge in Data Science, Machine Learning, Artificial Intelligence, Power BI, and Web Development.
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3.5">
+            <button onclick="scrollToId('projects')" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 text-white text-sm font-semibold shadow-lg shadow-indigo-600/30 hover:scale-[1.02] transition-all">
+              <span>View Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button onclick="scrollToId('contact')" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800/80 light:bg-white hover:bg-slate-700 text-slate-200 light:text-slate-800 text-sm font-semibold border border-slate-700/60 transition-all">
+              <i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i>
+              <span>Contact Me</span>
+            </button>
+            <button onclick="openResumeModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-500/10 light:bg-indigo-50 text-indigo-300 light:text-indigo-700 text-sm font-semibold border border-indigo-500/20 transition-all">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span>Download Resume</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Small Profile Card -->
+        <div class="lg:col-span-4 flex flex-col justify-between glass-panel rounded-3xl p-6 group">
+          <div>
+            <div class="mx-auto w-40 h-40 rounded-2xl overflow-hidden ring-4 ring-indigo-500/30 shadow-2xl">
+              <img src="IMG-20260927-WA0004.jpg" onerror="this.src='public/assets/profile.jpg'" alt="Bhavani" class="w-full h-full object-cover object-top filter brightness-105">
+            </div>
+            <div class="text-center mt-4">
+              <h2 class="font-bold text-base text-slate-100 light:text-slate-900">Kuruva Thulaja Bhavani</h2>
+              <p class="text-xs text-indigo-400 light:text-indigo-600 font-medium mt-0.5">St. John's College of Engineering & Technology</p>
+            </div>
+          </div>
+          <div class="mt-5 space-y-2.5 pt-4 border-t border-slate-800/60 light:border-slate-200 text-xs">
+            <div class="flex justify-between text-slate-300 light:text-slate-600">
+              <span class="flex items-center gap-1.5"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-indigo-400"></i> Degree</span>
+              <span class="font-medium text-slate-200 light:text-slate-800">B.Tech Data Science & Eng.</span>
+            </div>
+            <div class="flex justify-between text-slate-300 light:text-slate-600">
+              <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i> Percentage</span>
+              <span class="font-semibold text-emerald-400 light:text-emerald-600">82.5% Aggregate</span>
+            </div>
+            <div class="flex justify-between text-slate-300 light:text-slate-600">
+              <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400"></i> Status</span>
+              <span class="font-medium text-slate-200 light:text-slate-800">Final Year (Pursuing)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Area -->
+      <div class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="glass-panel glass-panel-interactive rounded-2xl p-4 sm:p-5 flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 shrink-0"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+          <div><div class="text-xl sm:text-2xl font-bold text-slate-100 light:text-slate-900">Final Year</div><div class="text-xs text-slate-400">B.Tech Data Science</div></div>
+        </div>
+        <div class="glass-panel glass-panel-interactive rounded-2xl p-4 sm:p-5 flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 shrink-0"><i data-lucide="trending-up" class="w-6 h-6"></i></div>
+          <div><div class="text-xl sm:text-2xl font-bold text-cyan-400 font-mono" id="stat-percentage">82.5%</div><div class="text-xs text-slate-400">B.Tech Aggregate</div></div>
+        </div>
+        <div class="glass-panel glass-panel-interactive rounded-2xl p-4 sm:p-5 flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 shrink-0"><i data-lucide="folder-git-2" class="w-6 h-6"></i></div>
+          <div><div class="text-xl sm:text-2xl font-bold text-slate-100 light:text-slate-900 font-mono">2 Projects</div><div class="text-xs text-slate-400">Power BI & Web Gallery</div></div>
+        </div>
+        <div class="glass-panel glass-panel-interactive rounded-2xl p-4 sm:p-5 flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-purple-500/10 text-purple-400 shrink-0"><i data-lucide="file-badge" class="w-6 h-6"></i></div>
+          <div><div class="text-xl sm:text-2xl font-bold text-purple-400 font-mono">6 Credentials</div><div class="text-xs text-slate-400">Technical Certifications</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-10 border-t border-slate-800/60 light:border-slate-200">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="user" class="w-5 h-5"></i></div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-100 light:text-slate-900 tracking-tight">About Me</h2>
+          <p class="text-xs text-slate-400">Professional objective, academic background & core focus</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-4">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-400">
+              <i data-lucide="target" class="w-4 h-4"></i><span>Career Objective</span>
+            </div>
+            <p class="text-slate-200 light:text-slate-800 text-base sm:text-lg leading-relaxed font-medium">
+              "A motivated and detail-oriented final-year Data Science student with foundational knowledge in Data Science, Machine Learning, Artificial Intelligence, Power BI, and Web Development."
+            </p>
+            <p class="text-slate-400 light:text-slate-600 text-sm leading-relaxed">
+              Currently pursuing B.Tech in Data Science & Engineering at St. John's College of Engineering and Technology, maintaining an aggregate score of 82.5%. Aspiring to solve complex analytical problems and contribute to innovative data and software engineering teams.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-slate-800/60 light:border-slate-200">
+            <div class="p-3 rounded-xl bg-slate-900/40 light:bg-slate-50 border border-slate-800/70 text-xs">
+              <div class="font-semibold text-slate-200 light:text-slate-800 flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i> Academic Standing</div>
+              <div class="text-slate-400 mt-1">82.5% B.Tech aggregate in Data Science</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/40 light:bg-slate-50 border border-slate-800/70 text-xs">
+              <div class="font-semibold text-slate-200 light:text-slate-800 flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-cyan-400"></i> Applied Practice</div>
+              <div class="text-slate-400 mt-1">Hands-on in Power BI & Web Development</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-indigo-400">
+              <i data-lucide="compass" class="w-4 h-4"></i><span>Currently Learning / Interests</span>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 font-medium">Resume Aligned</span>
+          </div>
+
+          <div class="space-y-2.5">
+            <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-50 border border-slate-800/70">
+              <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-200 light:text-slate-800">Data Science</span><span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Core Focus</span></div>
+              <p class="text-[11px] text-slate-400 mt-1">Data cleaning, transformation pipelines, and statistical analysis.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-50 border border-slate-800/70">
+              <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-200 light:text-slate-800">Machine Learning</span><span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Basics</span></div>
+              <p class="text-[11px] text-slate-400 mt-1">Foundational supervised & unsupervised algorithms and model principles.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-50 border border-slate-800/70">
+              <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-200 light:text-slate-800">Artificial Intelligence</span><span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Exploration</span></div>
+              <p class="text-[11px] text-slate-400 mt-1">Intelligent systems, heuristics, and algorithmic reasoning.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-50 border border-slate-800/70">
+              <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-200 light:text-slate-800">Power BI</span><span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Analytics</span></div>
+              <p class="text-[11px] text-slate-400 mt-1">Executive KPI dashboards, interactive slicers, and regional analytics.</p>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/50 light:bg-slate-50 border border-slate-800/70">
+              <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-200 light:text-slate-800">Web Development</span><span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Frontend</span></div>
+              <p class="text-[11px] text-slate-400 mt-1">Semantic HTML5, CSS Flexbox layouts, animations, and micro-interactions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="py-10 border-t border-slate-800/60 light:border-slate-200">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-100 light:text-slate-900 tracking-tight">Education</h2>
+          <p class="text-xs text-slate-400">Interactive academic timeline & verified milestones</p>
+        </div>
+      </div>
+
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-indigo-500/20 ml-3 sm:ml-4 space-y-6">
+        <!-- 1. St. John's -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-600 text-white flex items-center justify-center ring-4 ring-indigo-500/20">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          </div>
+          <div class="glass-panel rounded-2xl p-5 sm:p-6 border-indigo-500/30">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold text-indigo-400">Andhra Pradesh • Pursuing</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 light:text-slate-900">St. John’s College of Engineering and Technology</h3>
+                <p class="text-sm font-semibold text-slate-300 light:text-slate-700">B.Tech – Data Science and Engineering</p>
+              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-right self-start sm:self-center">
+                <div class="text-[10px] text-slate-400 uppercase">Percentage</div>
+                <div class="text-base font-bold text-indigo-400 font-mono">82.5%</div>
+              </div>
+            </div>
+            <p class="mt-2.5 text-xs sm:text-sm text-slate-400">Specialization in Data Science and Engineering principles, maintaining consistent 82.5% aggregate score.</p>
+          </div>
+        </div>
+
+        <!-- 2. Akshara Sri Junior College -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center ring-4 ring-[#0A0D14]">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          </div>
+          <div class="glass-panel rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold text-slate-400">Andhra Pradesh • Completed</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 light:text-slate-900">Akshara Sri Junior College</h3>
+                <p class="text-sm font-semibold text-slate-300 light:text-slate-700">Intermediate – MPC (Mathematics, Physics, Chemistry)</p>
+              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-slate-800/60 border border-slate-700/50 text-right self-start sm:self-center">
+                <div class="text-[10px] text-slate-400 uppercase">Percentage</div>
+                <div class="text-base font-bold text-slate-200 light:text-slate-800 font-mono">65%</div>
+              </div>
+            </div>
+            <p class="mt-2.5 text-xs sm:text-sm text-slate-400">Built foundational quantitative, scientific, and mathematical problem-solving skills.</p>
+          </div>
+        </div>
+
+        <!-- 3. National English Medium High School -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center ring-4 ring-[#0A0D14]">
+            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          </div>
+          <div class="glass-panel rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold text-slate-400">Andhra Pradesh • Completed</span>
+                <h3 class="text-base sm:text-lg font-bold text-slate-100 light:text-slate-900">National English Medium High School</h3>
+                <p class="text-sm font-semibold text-slate-300 light:text-slate-700">Secondary School Certificate (SSC)</p>
+              </div>
+              <div class="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-right self-start sm:self-center">
+                <div class="text-[10px] text-slate-400 uppercase">Score</div>
+                <div class="text-base font-bold text-emerald-400 font-mono">591 / 600 (98.5%)</div>
+              </div>
+            </div>
+            <p class="mt-2.5 text-xs sm:text-sm text-slate-400">Exceptional academic performance scoring 591 out of 600 total marks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-10 border-t border-slate-800/60 light:border-slate-200">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-100 light:text-slate-900 tracking-tight">Technical & Soft Skills</h2>
+            <p class="text-xs text-slate-400">Categorized from resume without invented percentages</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <input type="text" id="skill-search" oninput="filterSkills()" placeholder="Search skills..." class="px-3 py-1.5 rounded-xl text-xs bg-slate-900/60 light:bg-slate-100 border border-slate-800 text-slate-200 light:text-slate-800 focus:outline-none focus:border-indigo-500">
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none">
+        <button onclick="setSkillCategory('all')" class="skill-tab-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white" data-cat="all">All Skills</button>
+        <button onclick="setSkillCategory('frontend')" class="skill-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900/50 light:bg-slate-100 text-slate-400 border border-slate-800" data-cat="frontend">Frontend</button>
+        <button onclick="setSkillCategory('backend')" class="skill-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900/50 light:bg-slate-100 text-slate-400 border border-slate-800" data-cat="backend">Backend</button>
+        <button onclick="setSkillCategory('database')" class="skill-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900/50 light:bg-slate-100 text-slate-400 border border-slate-800" data-cat="database">Database</button>
+        <button onclick="setSkillCategory('core')" class="skill-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-900/50 light:bg-slate-100 text-slate-400 border border-slate-800" data-cat="core">Core Domains</button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- HTML -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="frontend" data-name="html">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="file-code-2" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">HTML</h3><div class="text-[11px] text-slate-400">Frontend Technologies</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Semantic markup, structuring document hierarchies, forms, and elements.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Core Standard</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- CSS -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="frontend" data-name="css">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="palette" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">CSS</h3><div class="text-[11px] text-slate-400">Frontend Technologies</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Flexbox, hover effects, shadows, rounded corners, and responsive layouts.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Styling & Layouts</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- Java -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="backend core" data-name="java">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="coffee" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">Java</h3><div class="text-[11px] text-slate-400">Backend & Core Domain</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Object-oriented programming, class design, algorithms, and modular logic.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>OOP Paradigm</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- Python -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="backend core" data-name="python">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="terminal" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">Python</h3><div class="text-[11px] text-slate-400">Backend & Core Domain</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Data manipulation, procedural scripts, algorithmic problem solving, standard libraries.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Data & Scripting</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- C -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="backend core" data-name="c">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">C</h3><div class="text-[11px] text-slate-400">Backend & Core Domain</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Procedural architecture, memory fundamentals, data structures, and control logic.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Procedural Systems</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- MySQL -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="database" data-name="mysql">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="database" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">MySQL</h3><div class="text-[11px] text-slate-400">Database</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Relational schema design, SQL queries, table joins, constraints, data integrity.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Relational SQL</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- Machine Learning (Basics) -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="core" data-name="machine learning basics">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="brain" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">Machine Learning (Basics)</h3><div class="text-[11px] text-slate-400">Core Domain</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Supervised & unsupervised learning principles, model evaluation, and feature preparation.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Predictive Models</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+        <!-- Data Science Fundamentals -->
+        <div class="skill-card glass-panel glass-panel-interactive rounded-2xl p-4 flex flex-col justify-between" data-cat="core" data-name="data science fundamentals">
+          <div>
+            <div class="flex items-center gap-3 mb-2">
+              <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="line-chart" class="w-5 h-5"></i></div>
+              <div><h3 class="font-bold text-slate-100 light:text-slate-900">Data Science Fundamentals</h3><div class="text-[11px] text-slate-400">Core Domain</div></div>
+            </div>
+            <p class="text-xs text-slate-400">Exploratory data analysis, cleaning pipelines, statistical insight generation, metrics.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/50 flex justify-between text-[10px] text-slate-400"><span>Analytics & EDA</span><span class="text-indigo-400">Resume Verified</span></div>
+        </div>
+      </div>
+
+      <!-- Soft Skills Row -->
+      <div class="mt-10">
+        <h3 class="text-base font-bold text-slate-100 light:text-slate-900 mb-4 flex items-center gap-2">
+          <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
+          <span>Soft Skills (Resume Source of Truth)</span>
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div class="glass-panel p-3.5 rounded-xl text-center">
+            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-400 mx-auto mb-2"></i>
+            <div class="text-xs font-bold text-slate-200 light:text-slate-800">Problem Solving</div>
+          </div>
+          <div class="glass-panel p-3.5 rounded-xl text-center">
+            <i data-lucide="repeat" class="w-5 h-5 text-indigo-400 mx-auto mb-2"></i>
+            <div class="text-xs font-bold text-slate-200 light:text-slate-800">Adaptability</div>
+          </div>
+          <div class="glass-panel p-3.5 rounded-xl text-center">
+            <i data-lucide="users-2" class="w-5 h-5 text-emerald-400 mx-auto mb-2"></i>
+            <div class="text-xs font-bold text-slate-200 light:text-slate-800">Team Collaboration</div>
+          </div>
+          <div class="glass-panel p-3.5 rounded-xl text-center">
+            <i data-lucide="file-check" class="w-5 h-5 text-cyan-400 mx-auto mb-2"></i>
+            <div class="text-xs font-bold text-slate-200 light:text-slate-800">Editing Skills</div>
+          </div>
+          <div class="glass-panel p-3.5 rounded-xl text-center col-span-2 sm:col-span-1">
+            <i data-lucide="message-square" class="w-5 h-5 text-purple-400 mx-auto mb-2"></i>
+            <div class="text-xs font-bold text-slate-200 light:text-slate-800">Effective Communication</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-10 border-t border-slate-800/60 light:border-slate-200">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="folder-git-2" class="w-5 h-5"></i></div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-100 light:text-slate-900 tracking-tight">Featured Projects</h2>
+            <p class="text-xs text-slate-400">Interactive analytics and web implementations</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Project 1: Chocolate Sales -->
+        <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between hover:border-indigo-500/40 transition-all">
+          <div>
+            <div class="w-full h-48 rounded-2xl bg-slate-950 p-4 border border-slate-800 flex flex-col justify-between mb-4">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-amber-400 flex items-center gap-1.5"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> Chocolate Sales BI Dashboard</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Power BI</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="p-2 rounded bg-slate-900/80 border border-slate-800 text-center"><div class="text-[9px] text-slate-400">Total Sales</div><div class="text-xs font-bold text-emerald-400 font-mono">$2.84M</div></div>
+                <div class="p-2 rounded bg-slate-900/80 border border-slate-800 text-center"><div class="text-[9px] text-slate-400">Margin</div><div class="text-xs font-bold text-indigo-400 font-mono">29.6%</div></div>
+                <div class="p-2 rounded bg-slate-900/80 border border-slate-800 text-center"><div class="text-[9px] text-slate-400">Units</div><div class="text-xs font-bold text-cyan-400 font-mono">450K</div></div>
+              </div>
+              <div class="text-[9px] text-slate-400 flex items-center gap-1"><i data-lucide="info" class="w-2.5 h-2.5 text-amber-400"></i> Portfolio visual representation of Power BI metrics</div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-indigo-500/20 text-indigo-300">Power BI</span>
+              <span class="text-xs text-slate-400">Business Intelligence & Analytics</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 light:text-slate-900">Chocolate Company Sales Dashboard</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mt-2">Developed an interactive dashboard to analyze chocolate company sales, profit, products, and regional performance.</p>
+            
+            <div class="mt-4 pt-3 border-t border-slate-800/60">
+              <div class="text-[11px] text-slate-400 uppercase font-semibold mb-2">Highlights:</div>
+              <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-slate-800">Data cleaning</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Data transformation</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">KPIs</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Charts</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Slicers</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Filters</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Business insights</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-indigo-400 font-medium">Includes BI Regional Simulator</span>
+            <button onclick="openPowerBIModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 transition-all">
+              View Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: E-Commerce Product Gallery -->
+        <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between hover:border-indigo-500/40 transition-all">
+          <div>
+            <div class="w-full h-48 rounded-2xl bg-slate-950 p-4 border border-slate-800 flex flex-col justify-between mb-4">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-indigo-400 flex items-center gap-1.5"><i data-lucide="layout" class="w-4 h-4"></i> E-Commerce Product Gallery</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">HTML & CSS</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="p-2 rounded bg-slate-900/80 border border-slate-800"><div class="text-[10px] font-bold text-slate-200">Dark Truffles</div><div class="text-[9px] text-emerald-400 font-mono">$12.50</div></div>
+                <div class="p-2 rounded bg-slate-900/80 border border-slate-800"><div class="text-[10px] font-bold text-slate-200">Hazelnut Bar</div><div class="text-[9px] text-emerald-400 font-mono">$15.00</div></div>
+              </div>
+              <div class="text-[10px] text-slate-400 flex justify-between"><span>Flexbox • Hover Effects • Shadows</span><span class="text-indigo-400">Semantic UI</span></div>
+            </div>
+
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-indigo-500/20 text-indigo-300">HTML & CSS</span>
+              <span class="text-xs text-slate-400">Frontend Web Development</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 light:text-slate-900">E-Commerce Product Gallery</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mt-2">Designed and developed an interactive E-Commerce Product Gallery with product images, names, prices, ratings, descriptions, and Add to Cart buttons.</p>
+            
+            <div class="mt-4 pt-3 border-t border-slate-800/60">
+              <div class="text-[11px] text-slate-400 uppercase font-semibold mb-2">Highlights:</div>
+              <div class="flex flex-wrap gap-1.5 text-[11px] text-slate-300">
+                <span class="px-2 py-0.5 rounded bg-slate-800">Flexbox</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Hover effects</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Shadows</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">Rounded corners</span>
+                <span class="px-2 py-0.5 rounded bg-slate-800">User-friendly navigation bar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between">
+            <span class="text-xs text-indigo-400 font-medium">Includes Interactive Gallery Demo</span>
+            <button onclick="openEcommerceModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 transition-all">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="py-10 border-t border-slate-800/60 light:border-slate-200">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="file-badge" class="w-5 h-5"></i></div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-100 light:text-slate-900 tracking-tight">Certifications</h2>
+            <p class="text-xs text-slate-400">All 6 verified certifications strictly from resume</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex bg-slate-900/60 p-1 rounded-xl border border-slate-800">
+            <button onclick="setCertYear('All')" class="cert-year-btn active px-3 py-1 rounded-lg text-xs font-semibold bg-indigo-600 text-white" data-year="All">All</button>
+            <button onclick="setCertYear('2026')" class="cert-year-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-year="2026">2026</button>
+            <button onclick="setCertYear('2025')" class="cert-year-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-year="2025">2025</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="certs-grid">
+        <!-- Cert 1 -->
+        <div class="cert-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-year="2026">
+          <div>
+            <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">Specialized Course</span><span class="text-xs font-mono text-slate-400">2026</span></div>
+            <h3 class="font-bold text-sm text-slate-100 light:text-slate-900">Data Science & Data Engineering</h3>
+            <div class="text-xs text-indigo-400 mt-1 flex items-center gap-1"><i data-lucide="building-2" class="w-3.5 h-3.5"></i> SkillDzire</div>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 6 June 2026</div>
+            <p class="text-xs text-slate-400 mt-2">Comprehensive data pipelines, scientific manipulation, and scalable data concepts.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/60 text-[11px] text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Resume Certified</div>
+        </div>
+        <!-- Cert 2 -->
+        <div class="cert-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-year="2026">
+          <div>
+            <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">Applied Course</span><span class="text-xs font-mono text-slate-400">2026</span></div>
+            <h3 class="font-bold text-sm text-slate-100 light:text-slate-900">Data Analysis & Application Development</h3>
+            <div class="text-xs text-indigo-400 mt-1 flex items-center gap-1"><i data-lucide="building-2" class="w-3.5 h-3.5"></i> Innomatics Research Labs</div>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 24 Nov 2025 – 19 Jan 2026</div>
+            <p class="text-xs text-slate-400 mt-2">Hands-on curriculum bridging real-world analysis with application development methodologies.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/60 text-[11px] text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Resume Certified</div>
+        </div>
+        <!-- Cert 3 -->
+        <div class="cert-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-year="2025">
+          <div>
+            <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">National Cert</span><span class="text-xs font-mono text-slate-400">2025</span></div>
+            <h3 class="font-bold text-sm text-slate-100 light:text-slate-900">Introduction to Internet of Things</h3>
+            <div class="text-xs text-indigo-400 mt-1 flex items-center gap-1"><i data-lucide="building-2" class="w-3.5 h-3.5"></i> NPTEL</div>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> July – October 2025</div>
+            <p class="text-xs text-slate-400 mt-2">In-depth study of IoT architectures, sensors, protocols, and connected devices.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/60 text-[11px] text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Resume Certified</div>
+        </div>
+        <!-- Cert 4 -->
+        <div class="cert-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-year="2025">
+          <div>
+            <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">Job Simulation</span><span class="text-xs font-mono text-slate-400">2025</span></div>
+            <h3 class="font-bold text-sm text-slate-100 light:text-slate-900">Data Analytics Job Simulation</h3>
+            <div class="text-xs text-indigo-400 mt-1 flex items-center gap-1"><i data-lucide="building-2" class="w-3.5 h-3.5"></i> Industry Simulation</div>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 7 July 2025</div>
+            <p class="text-xs text-slate-400 mt-2">Practical business cases, cleaning raw datasets, and stakeholder reporting.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/60 text-[11px] text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Resume Certified</div>
+        </div>
+        <!-- Cert 5 -->
+        <div class="cert-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-year="2025">
+          <div>
+            <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">Foundational AI</span><span class="text-xs font-mono text-slate-400">2025</span></div>
+            <h3 class="font-bold text-sm text-slate-100 light:text-slate-900">Introduction to Artificial Intelligence</h3>
+            <div class="text-xs text-indigo-400 mt-1 flex items-center gap-1"><i data-lucide="building-2" class="w-3.5 h-3.5"></i> AI Credential</div>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 2 April 2025</div>
+            <p class="text-xs text-slate-400 mt-2">Conceptual grounding in intelligent agents, state search, and heuristics.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/60 text-[11px] text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Resume Certified</div>
+        </div>
+        <!-- Cert 6 -->
+        <div class="cert-card glass-panel rounded-2xl p-5 flex flex-col justify-between" data-year="2025">
+          <div>
+            <div class="flex justify-between items-center mb-2"><span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">Programming</span><span class="text-xs font-mono text-slate-400">2025</span></div>
+            <h3 class="font-bold text-sm text-slate-100 light:text-slate-900">Python Programming</h3>
+            <div class="text-xs text-indigo-400 mt-1 flex items-center gap-1"><i data-lucide="building-2" class="w-3.5 h-3.5"></i> Aylin Technologies</div>
+            <div class="text-xs text-slate-400 mt-0.5 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 22 February 2025</div>
+            <p class="text-xs text-slate-400 mt-2">Core to intermediate Python syntax, data structures, libraries, and scripting.</p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-slate-800/60 text-[11px] text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Resume Certified</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-10 border-t border-slate-800/60 light:border-slate-200">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400"><i data-lucide="mail" class="w-5 h-5"></i></div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-100 light:text-slate-900 tracking-tight">Get in Touch</h2>
+          <p class="text-xs text-slate-400">Direct contact details from resume</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 space-y-4">
+          <h3 class="text-xl font-bold text-slate-100 light:text-slate-900">Let's Connect</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Open for internships and entry-level positions in Data Science, Machine Learning, Power BI, and Web Development.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-900/60 flex items-center justify-between text-xs">
+              <div><div class="text-[10px] text-slate-500">Email</div><a href="mailto:bhavani.k39k@gmail.com" class="font-bold text-slate-200 hover:text-indigo-400">bhavani.k39k@gmail.com</a></div>
+              <button onclick="copyText('bhavani.k39k@gmail.com', 'Email')" class="p-1.5 bg-slate-800 rounded hover:text-white"><i data-lucide="copy" class="w-3.5 h-3.5"></i></button>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 flex items-center justify-between text-xs">
+              <div><div class="text-[10px] text-slate-500">Mobile</div><a href="tel:+918331005306" class="font-bold text-slate-200 hover:text-emerald-400">+91 8331005306</a></div>
+              <button onclick="copyText('+91 8331005306', 'Phone')" class="p-1.5 bg-slate-800 rounded hover:text-white"><i data-lucide="copy" class="w-3.5 h-3.5"></i></button>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/60 flex items-center gap-2 text-xs">
+              <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i>
+              <div><div class="text-[10px] text-slate-500">Location</div><div class="font-bold text-slate-200">Andhra Pradesh, India</div></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 pt-2">
+            <a href="mailto:bhavani.k39k@gmail.com" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-lg">
+              <i data-lucide="mail" class="w-4 h-4"></i><span>Email Me</span>
+            </a>
+            <a href="tel:+918331005306" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 text-xs font-bold">
+              <i data-lucide="phone" class="w-4 h-4"></i><span>Call Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Email Form -->
+        <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8">
+          <h3 class="text-base font-bold text-slate-100 light:text-slate-900 mb-4">Send a Direct Message</h3>
+          <form onsubmit="handleContactSubmit(event)" class="space-y-3.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input type="text" id="contact-name" required placeholder="Your Name *" class="w-full px-3.5 py-2.5 rounded-xl text-xs bg-slate-900/60 light:bg-slate-100 border border-slate-800 text-slate-100 focus:outline-none focus:border-indigo-500">
+              <input type="email" id="contact-email" required placeholder="Your Email *" class="w-full px-3.5 py-2.5 rounded-xl text-xs bg-slate-900/60 light:bg-slate-100 border border-slate-800 text-slate-100 focus:outline-none focus:border-indigo-500">
+            </div>
+            <input type="text" id="contact-subject" placeholder="Subject / Opportunity Role" class="w-full px-3.5 py-2.5 rounded-xl text-xs bg-slate-900/60 light:bg-slate-100 border border-slate-800 text-slate-100 focus:outline-none focus:border-indigo-500">
+            <textarea id="contact-message" required rows="4" placeholder="Hello Bhavani, we'd like to invite you for..." class="w-full px-3.5 py-2.5 rounded-xl text-xs bg-slate-900/60 light:bg-slate-100 border border-slate-800 text-slate-100 focus:outline-none focus:border-indigo-500 resize-none"></textarea>
+            <div class="flex justify-between items-center pt-2">
+              <button type="submit" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold flex items-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i><span>Send Direct Message</span>
+              </button>
+              <button type="button" onclick="openResumeModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-medium">Download Resume</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-12 py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+      <p>© 2026 Kuruva Thulaja Bhavani • Final-Year B.Tech Data Science & Engineering • St. John's College of Engineering</p>
+    </footer>
+  </main>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. RESUME MODAL -->
+  <div id="resume-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md">
+    <div class="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto glass-panel bg-[#0B0F19] rounded-3xl border border-slate-700 p-6 sm:p-8">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-800 mb-6">
+        <span class="text-sm font-bold text-slate-100">Resume / CV Preview</span>
+        <div class="flex gap-2">
+          <button onclick="window.print()" class="px-3 py-1.5 rounded-xl bg-slate-800 text-xs text-slate-300 flex items-center gap-1.5"><i data-lucide="printer" class="w-3.5 h-3.5"></i> Print</button>
+          <a href="public/assets/resume.pdf" download="Kuruva_Thulaja_Bhavani_Resume.pdf" class="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold flex items-center gap-1.5"><i data-lucide="download" class="w-3.5 h-3.5"></i> Download PDF</a>
+          <button onclick="closeResumeModal()" class="p-1.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+      </div>
+
+      <div class="bg-slate-950 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 text-xs text-slate-300">
+        <div class="text-center border-b border-slate-800 pb-4">
+          <h2 class="text-xl font-bold text-white tracking-wide">KURUVA THULAJA BHAVANI</h2>
+          <p class="text-indigo-400 font-semibold mt-1">Final-Year B.Tech Data Science & Engineering Student</p>
+          <p class="text-slate-400 mt-1">bhavani.k39k@gmail.com • +91 8331005306 • Andhra Pradesh, India</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-indigo-400 uppercase tracking-wider border-b border-slate-800 pb-1 mb-1">Career Objective</h3>
+          <p>A motivated and detail-oriented final-year Data Science student with foundational knowledge in Data Science, Machine Learning, Artificial Intelligence, Power BI, and Web Development.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-indigo-400 uppercase tracking-wider border-b border-slate-800 pb-1 mb-2">Education</h3>
+          <div class="space-y-1.5">
+            <div class="flex justify-between font-semibold text-slate-100"><span>St. John’s College of Engineering and Technology</span><span class="text-emerald-400 font-mono">82.5% (Pursuing)</span></div>
+            <div class="text-slate-400">B.Tech – Data Science and Engineering</div>
+            <div class="flex justify-between font-semibold text-slate-100 mt-2"><span>Akshara Sri Junior College</span><span class="text-slate-300 font-mono">65%</span></div>
+            <div class="text-slate-400">Intermediate – MPC</div>
+            <div class="flex justify-between font-semibold text-slate-100 mt-2"><span>National English Medium High School</span><span class="text-emerald-400 font-mono">591 / 600</span></div>
+            <div class="text-slate-400">Secondary School Certificate (SSC)</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-indigo-400 uppercase tracking-wider border-b border-slate-800 pb-1 mb-2">Technical Skills</h3>
+          <p><span class="font-semibold text-white">Frontend:</span> HTML, CSS | <span class="font-semibold text-white">Backend:</span> Java, Python, C | <span class="font-semibold text-white">Database:</span> MySQL</p>
+          <p class="mt-1"><span class="font-semibold text-white">Core Domains:</span> Machine Learning (Basics), Data Science Fundamentals</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-indigo-400 uppercase tracking-wider border-b border-slate-800 pb-1 mb-2">Projects</h3>
+          <p class="font-semibold text-white">1. Chocolate Company Sales Dashboard (Technology: Power BI)</p>
+          <p class="text-slate-400">Analyzed sales, profit, products, and regional performance with data cleaning, KPIs, slicers, and filters.</p>
+          <p class="font-semibold text-white mt-2">2. E-Commerce Product Gallery (Technology: HTML & CSS)</p>
+          <p class="text-slate-400">Designed responsive product gallery using Flexbox, hover effects, shadows, rounded corners, and Add to Cart.</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-indigo-400 uppercase tracking-wider border-b border-slate-800 pb-1 mb-1">Certifications</h3>
+          <ul class="list-disc list-inside text-slate-400 space-y-0.5">
+            <li>Python Programming — Aylin Technologies (22 Feb 2025)</li>
+            <li>Introduction to Artificial Intelligence (2 Apr 2025)</li>
+            <li>Data Analytics Job Simulation (7 Jul 2025)</li>
+            <li>Introduction to Internet of Things — NPTEL (Jul–Oct 2025)</li>
+            <li>Data Analysis & Application Development — Innomatics Research Labs (Nov 2025 – Jan 2026)</li>
+            <li>Data Science & Data Engineering — SkillDzire (6 Jun 2026)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. POWER BI PROJECT SIMULATION MODAL -->
+  <div id="powerbi-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md">
+    <div class="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto glass-panel bg-[#0D121F] rounded-3xl border border-slate-700 p-6 sm:p-8">
+      <button onclick="closePowerBIModal()" class="absolute top-5 right-5 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-indigo-500/20 text-indigo-300">Power BI Project</span>
+      <h2 class="text-2xl font-bold text-white mt-1">Chocolate Company Sales Dashboard</h2>
+      <p class="text-xs text-slate-400 mt-1">Developed an interactive dashboard to analyze chocolate company sales, profit, products, and regional performance.</p>
+
+      <!-- Interactive Regional Simulation -->
+      <div class="mt-6 bg-[#090D16] p-4 rounded-2xl border border-slate-800 space-y-4">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-semibold text-slate-300 flex items-center gap-1.5"><i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-indigo-400"></i> Region Slicer:</span>
+          <div class="flex gap-1">
+            <button onclick="setRegion('All')" class="region-btn px-2.5 py-1 rounded bg-indigo-600 text-white text-[11px]" data-reg="All">All</button>
+            <button onclick="setRegion('NA')" class="region-btn px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-[11px]" data-reg="NA">North America</button>
+            <button onclick="setRegion('EU')" class="region-btn px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-[11px]" data-reg="EU">Europe</button>
+            <button onclick="setRegion('APAC')" class="region-btn px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-[11px]" data-reg="APAC">APAC</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center"><div class="text-[10px] text-slate-400">Revenue</div><div id="sim-revenue" class="text-base font-bold text-white font-mono">$2.84M</div></div>
+          <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center"><div class="text-[10px] text-slate-400">Profit Margin</div><div id="sim-margin" class="text-base font-bold text-emerald-400 font-mono">29.6%</div></div>
+          <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-center"><div class="text-[10px] text-slate-400">Units Sold</div><div id="sim-units" class="text-base font-bold text-cyan-400 font-mono">450,000</div></div>
+        </div>
+        <div class="text-[10px] text-amber-400 flex items-center gap-1"><i data-lucide="info" class="w-3 h-3"></i> Interactive portfolio representation of Power BI metrics & slicers.</div>
+      </div>
+
+      <div class="mt-6 space-y-2">
+        <h4 class="text-xs font-bold text-slate-300 uppercase">Key Project Highlights:</h4>
+        <div class="flex flex-wrap gap-1.5 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded bg-slate-800">Data cleaning</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Data transformation</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">KPIs</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Charts</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Slicers</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Filters</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Business insights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. E-COMMERCE PROJECT MODAL -->
+  <div id="ecommerce-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md">
+    <div class="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto glass-panel bg-[#0D121F] rounded-3xl border border-slate-700 p-6 sm:p-8">
+      <button onclick="closeEcommerceModal()" class="absolute top-5 right-5 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-emerald-500/20 text-emerald-300">HTML & CSS Project</span>
+      <h2 class="text-2xl font-bold text-white mt-1">E-Commerce Product Gallery</h2>
+      <p class="text-xs text-slate-400 mt-1">Designed and developed an interactive E-Commerce Product Gallery with product images, names, prices, ratings, descriptions, and Add to Cart buttons.</p>
+
+      <!-- Interactive Gallery Demo -->
+      <div class="mt-6 bg-[#090D16] p-4 rounded-2xl border border-slate-800 space-y-4">
+        <div class="flex justify-between items-center p-2 rounded-xl bg-slate-900 border border-slate-800">
+          <span class="text-xs font-bold text-slate-200">Catalog Showcase</span>
+          <div class="px-2.5 py-1 rounded-full bg-indigo-600 text-white text-xs font-semibold flex items-center gap-1.5">
+            <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+            <span>Cart: <span id="cart-counter">0</span> items</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:-translate-y-1 transition-all flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] text-amber-400 font-bold mb-1">★ 4.9 Best Seller</div>
+              <div class="text-xs font-bold text-slate-200">Dark Cocoa 85%</div>
+              <p class="text-[10px] text-slate-400 mt-1">Single-origin premium dark chocolate bar.</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 flex justify-between items-center">
+              <span class="text-xs font-bold text-emerald-400 font-mono">$12.50</span>
+              <button onclick="addToCart()" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-semibold">Add</button>
+            </div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:-translate-y-1 transition-all flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] text-amber-400 font-bold mb-1">★ 4.8 Popular</div>
+              <div class="text-xs font-bold text-slate-200">Roasted Truffles</div>
+              <p class="text-[10px] text-slate-400 mt-1">Hand-rolled hazelnut dark chocolate truffles.</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 flex justify-between items-center">
+              <span class="text-xs font-bold text-emerald-400 font-mono">$15.00</span>
+              <button onclick="addToCart()" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-semibold">Add</button>
+            </div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:-translate-y-1 transition-all flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] text-amber-400 font-bold mb-1">★ 4.7 Pure</div>
+              <div class="text-xs font-bold text-slate-200">Artisan Cocoa</div>
+              <p class="text-[10px] text-slate-400 mt-1">Pure alkalized Dutch-process cocoa powder.</p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-800 flex justify-between items-center">
+              <span class="text-xs font-bold text-emerald-400 font-mono">$9.90</span>
+              <button onclick="addToCart()" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-semibold">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-2">
+        <h4 class="text-xs font-bold text-slate-300 uppercase">Key Project Highlights:</h4>
+        <div class="flex flex-wrap gap-1.5 text-xs text-slate-300">
+          <span class="px-2.5 py-1 rounded bg-slate-800">Flexbox</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Hover effects</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Shadows</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">Rounded corners</span>
+          <span class="px-2.5 py-1 rounded bg-slate-800">User-friendly navigation bar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 z-50 px-4 py-3 rounded-2xl bg-indigo-600 text-white text-xs font-semibold shadow-2xl transition-all">
+    <span id="toast-text">Copied!</span>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC (Runs directly on file:// without needing any server) -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Scroll helper
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Theme toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        document.getElementById('theme-btn-text').innerText = 'Dark';
+      } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        document.getElementById('theme-btn-text').innerText = 'Light';
+      }
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Toast helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-text').innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 2500);
+    }
+
+    // Copy to clipboard
+    function copyText(text, label) {
+      navigator.clipboard.writeText(text);
+      showToast(label + ' copied to clipboard!');
+    }
+
+    // Skill category filtering
+    function setSkillCategory(cat) {
+      document.querySelectorAll('.skill-tab-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.classList.add('bg-indigo-600', 'text-white');
+          btn.classList.remove('bg-slate-900/50', 'text-slate-400');
+        } else {
+          btn.classList.remove('bg-indigo-600', 'text-white');
+          btn.classList.add('bg-slate-900/50', 'text-slate-400');
+        }
+      });
+      document.querySelectorAll('.skill-card').forEach(card => {
+        const categories = card.getAttribute('data-cat').split(' ');
+        if (cat === 'all' || categories.includes(cat)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function filterSkills() {
+      const q = document.getElementById('skill-search').value.toLowerCase();
+      document.querySelectorAll('.skill-card').forEach(card => {
+        const name = card.getAttribute('data-name');
+        if (name.includes(q)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Certifications filtering
+    function setCertYear(year) {
+      document.querySelectorAll('.cert-year-btn').forEach(btn => {
+        if (btn.getAttribute('data-year') === year) {
+          btn.classList.add('bg-indigo-600', 'text-white');
+          btn.classList.remove('text-slate-400');
+        } else {
+          btn.classList.remove('bg-indigo-600', 'text-white');
+          btn.classList.add('text-slate-400');
+        }
+      });
+      document.querySelectorAll('.cert-card').forEach(card => {
+        const cYear = card.getAttribute('data-year');
+        if (year === 'All' || cYear === year) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Modals
+    function openResumeModal() { document.getElementById('resume-modal').classList.remove('hidden'); }
+    function closeResumeModal() { document.getElementById('resume-modal').classList.add('hidden'); }
+
+    function openPowerBIModal() { document.getElementById('powerbi-modal').classList.remove('hidden'); }
+    function closePowerBIModal() { document.getElementById('powerbi-modal').classList.add('hidden'); }
+
+    function openEcommerceModal() { document.getElementById('ecommerce-modal').classList.remove('hidden'); }
+    function closeEcommerceModal() { document.getElementById('ecommerce-modal').classList.add('hidden'); }
+
+    // Power BI Slicer Simulation
+    const regMetrics = {
+      All: { rev: '$2.84M', margin: '29.6%', units: '450,000' },
+      NA: { rev: '$1.12M', margin: '30.8%', units: '180,000' },
+      EU: { rev: '$980K', margin: '31.1%', units: '155,000' },
+      APAC: { rev: '$540K', margin: '26.3%', units: '85,000' }
+    };
+    function setRegion(reg) {
+      document.querySelectorAll('.region-btn').forEach(b => {
+        if (b.getAttribute('data-reg') === reg) {
+          b.className = 'region-btn px-2.5 py-1 rounded bg-indigo-600 text-white text-[11px]';
+        } else {
+          b.className = 'region-btn px-2.5 py-1 rounded bg-slate-800 text-slate-400 text-[11px]';
+        }
+      });
+      const data = regMetrics[reg];
+      document.getElementById('sim-revenue').innerText = data.rev;
+      document.getElementById('sim-margin').innerText = data.margin;
+      document.getElementById('sim-units').innerText = data.units;
+    }
+
+    // E-Commerce cart simulation
+    let cartTotal = 0;
+    function addToCart() {
+      cartTotal++;
+      document.getElementById('cart-counter').innerText = cartTotal;
+      showToast('Item added to cart! (Total: ' + cartTotal + ')');
+    }
+
+    // Contact form submit
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const sub = document.getElementById('contact-subject').value || 'Opportunity';
+      const msg = document.getElementById('contact-message').value;
+      showToast('Opening default email client...');
+      window.location.href = `mailto:bhavani.k39k@gmail.com?subject=${encodeURIComponent(name + ': ' + sub)}&body=${encodeURIComponent(msg)}`;
+    }
+  </script>
+</body>
+</html>
